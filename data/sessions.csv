@@ -1,0 +1,37 @@
+code,name,session_type,day,start,end,weeks,faculty,venue,confidence
+01.107,Urban Transportation,Seminar (CBL),Tue,11:30,13:30,"1-6,8-13",Cai Yutong,"Think Tank 2/3, 1.309/1.310",high
+01.107,Urban Transportation,Seminar (CBL),Thu,11:30,13:30,"1-6,8-13",Cai Yutong,"Think Tank 2/3, 1.309/1.310",high
+01.400,Capstone,Studio (CBL),Wed,10:30,13:30,"1-6,8-13",-,"Capstone 1, 1.411",high
+01.400,Capstone,Studio (CBL),Fri,08:30,11:30,"1-6,8-13",-,"Capstone 1, 1.411",high
+40.242,Derivative Pricing and Risk Management,Seminar (CBL),Tue,11:30,13:30,"1-6,8-13",Douglas Streeter Rolph,"Think Tank 20, 2.305",high
+40.242,Derivative Pricing and Risk Management,Seminar (CBL),Thu,11:30,13:30,"1-6,8-13",Douglas Streeter Rolph,"Think Tank 20, 2.305",high
+40.302,Advanced Topics in Optimisation (weeks 1-6),Lecture,Tue,09:00,11:00,"1-6",Antonios Varvitsiotis,"Lecture Theatre 2, 1.203/1.318",high
+40.302,Advanced Topics in Optimisation (weeks 1-6),Seminar (CBL),Tue,14:00,16:00,"1-6",Antonios Varvitsiotis,"Think Tank 2/3, 1.309/1.310",high
+40.302,Advanced Topics in Optimisation (weeks 1-6),Seminar (CBL),Thu,13:30,15:30,"1-6",Antonios Varvitsiotis,"Think Tank 2/3, 1.309/1.310",high
+40.305,Advanced Topics in Stochastic Modeling (weeks 8-13),Lecture,Tue,09:00,11:00,"8-13",Lee Young,"Lecture Theatre 2, 1.203/1.318",high
+40.305,Advanced Topics in Stochastic Modeling (weeks 8-13),Seminar (CBL),Tue,14:00,16:00,"8-13",Lee Young,"Think Tank 2/3, 1.309/1.310",high
+40.305,Advanced Topics in Stochastic Modeling (weeks 8-13),Seminar (CBL),Thu,13:30,15:30,"8-13",Lee Young,"Think Tank 2/3, 1.309/1.310",high
+40.318,Supply Chain Digitalisation and Design,Seminar (CBL),Mon,11:00,13:00,"1-6,8,10-13",XU Ying,"Think Tank 2/3, 1.309/1.310",high
+40.318,Supply Chain Digitalisation and Design,Seminar (CBL),Fri,11:30,13:30,"1-6,8-13",XU Ying,"Think Tank 2/3, 1.309/1.310",high
+40.321,Airport Systems Modelling and Simulation,Seminar (CBL),Mon,13:00,15:00,"1-6,8,10-13",Nuno Antunes Ribeiro,"Data Analytics Lab, 1.610",high
+40.321,Airport Systems Modelling and Simulation,Seminar (CBL),Wed,08:30,10:30,"1-6,8-13",Nuno Antunes Ribeiro,"Data Analytics Lab, 1.610",high
+40.323,Equity Valuation,Seminar (CBL),Tue,16:00,18:00,"1-6,8-13",Douglas Streeter Rolph,"Think Tank 20, 2.305",high
+40.323,Equity Valuation,Seminar (CBL),Thu,15:30,17:30,"1-6,8-13",Douglas Streeter Rolph,"Think Tank 20, 2.305",medium
+01.101,Technologies for Sustainable Global Health,Seminar (CBL),Tue,11:30,13:30,"1-6,8-13",Julia Zhu Yajuan,"Think Tank 2/3, 1.309/1.310",high
+01.101,Technologies for Sustainable Global Health,Seminar (CBL),Thu,16:00,19:00,"1-6,8-13",Julia Zhu Yajuan,"Think Tank 2/3, 1.309/1.310",low
+02.143HT,Artificial Intelligence and Ethics,Lecture,Tue,16:00,17:00,"1-6,8-13",Grace Boey (Koek Hui Xia Christina),"Lecture Theatre 4, 2.404",low
+02.143HT,Artificial Intelligence and Ethics,Seminar (CBL),Tue,18:00,20:00,"1-6,8-13",Grace Boey (Koek Hui Xia Christina),"Think Tank 1, 1.308",low
+02.143HT,Artificial Intelligence and Ethics,Seminar (CBL),Fri,11:30,13:30,"1-6,8-13",Grace Boey (Koek Hui Xia Christina),"Think Tank 1, 1.308",medium
+02.146,Financing Cities of the Future: Theory and Practice,Seminar (CBL),Thu,08:30,11:30,"1-6,8-13",Jin Murakami,"Think Tank 6, 1.408",medium
+02.152TS,Urban Theory,Seminar (CBL),Mon,15:00,18:00,"1-6,8,10-13",Jeffrey Chan (Chan Kok Hui),"Cohort Classroom 14, 2.507A/2.507B",medium
+02.170HT,History of Surveillance in Modern Asia,Seminar (CBL),Mon,15:00,18:00,"1-6,8,10-13",Takahiro Yamamoto,"Think Tank 6, 1.408",medium
+02.180DH,Worldbuilding: Critical and Creative Practices,Seminar (CBL),Thu,08:30,11:30,"1-6,8-13",Debbie Meimei Ding,"Think Tank 1, 1.308",medium
+02.181HT,AI and Society,Seminar (CBL),Mon,15:00,18:00,"1-6,8,10-13",Bjoern Fischer,"Think Tank 1, 1.308",medium
+02.183HT,Philosophy of Artificial Intelligence,Lecture,Mon,15:00,16:00,"1-6,8,10-13",Nathaniel Gan,Lecture Theatre 4,low
+02.183HT,Philosophy of Artificial Intelligence,Seminar (CBL),Mon,16:00,18:00,"1-6,8,10-13",Nathaniel Gan,"Cohort Classroom 10, 2.308A/2.308B",low
+02.183HT,Philosophy of Artificial Intelligence,Seminar (CBL),Tue,18:00,20:00,"1-6,8-13",Nathaniel Gan,"Cohort Classroom 10, 2.308A/2.308B",low
+02.183HT,Philosophy of Artificial Intelligence,Seminar (CBL),Thu,08:30,11:30,"1-6,8-13",Nathaniel Gan,"Cohort Classroom 10, 2.308A/2.308B",medium
+02.208,Microeconomics,Lecture,Mon,15:00,18:00,"1-6,8,10-13",Su Mengyang,"Cohort Classroom 16, 2.607A/2.607B",medium
+02.208,Microeconomics,Seminar (CBL),Thu,08:30,11:30,"1-6,8-13",Su Mengyang,"Cohort Classroom 16, 2.607A/2.607B",medium
+02.230TS,Health Communication and Behavior Change,Lecture,Mon,15:00,16:00,"1-6,8,10-13",Evelyn Chew (Chew Ai Ling),Lecture Theatre 5,low
+02.230TS,Health Communication and Behavior Change,Seminar (CBL),Mon,16:00,18:00,"1-6,8,10-13",Evelyn Chew (Chew Ai Ling),"Cohort Classroom 12, 2.406A/2.406B",low

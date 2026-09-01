@@ -28,16 +28,19 @@ COLORS = [
 
 
 def normalize_code(code):
-    """Re-pad course codes that a spreadsheet editor has "helpfully" turned
-    into numbers, e.g. 01.107 -> 1.107, 01.400 -> 1.4. SUTD codes here are
-    always 2 digits, a dot, then a 3-digit number (optionally with a letter
-    suffix like HT/TS/DH, which spreadsheets never touch since it's text)."""
+    """Lossless whitespace/zero-pad cleanup only, e.g. ' 01.107' -> '01.107'
+    and '1.107' -> '01.107' (a spreadsheet dropping a leading zero loses no
+    information, so this is safe to restore). Deliberately does NOT guess a
+    dropped trailing digit (e.g. '1.4' is left as '1.4', not invented into
+    '01.400') — matching against exams.csv is strict/exact from here on, so
+    a code that was actually mangled just won't match, and shows up as a
+    visible warning instead of a silently "fixed" wrong answer."""
     code = str(code).strip()
-    m = re.fullmatch(r"(\d{1,2})\.(\d{1,3})", code)
+    m = re.fullmatch(r"(\d{1,2})\.(\d+[A-Za-z]*)", code)
     if not m:
         return code
-    whole, frac = m.groups()
-    return f"{int(whole):02d}.{frac:0<3}"
+    whole, rest = m.groups()
+    return f"{int(whole):02d}.{rest}"
 
 
 def normalize_time(s):
@@ -345,9 +348,16 @@ def main():
             hide_index=True,
         )
 
+    # One catalog entry per module `code`, no matter what each individual
+    # session row's `name` text says. Deduplicating on the (code, name) pair
+    # instead would silently split a module into multiple, inconsistent
+    # dropdown entries if any one row's name text differs even slightly
+    # (e.g. one row says "(CS01)" and another doesn't) — code is the only
+    # strict, reliable identity for a module.
     catalog = (
-        sessions[["code", "name"]]
-        .drop_duplicates()
+        sessions.groupby("code", sort=False)["name"]
+        .first()
+        .reset_index()
         .sort_values("code")
         .assign(label=lambda d: d["code"] + " — " + d["name"])
     )
@@ -426,6 +436,16 @@ def main():
     matched_exams = exams[exams["code"].isin(selected_codes)].copy()
     has_exam = matched_exams[matched_exams["date"].notna() & (matched_exams["date"] != "")]
     no_exam = matched_exams[matched_exams["date"].isna() | (matched_exams["date"] == "")]
+
+    unmatched_codes = sorted(set(selected_codes) - set(exams["code"]))
+    if unmatched_codes:
+        st.warning(
+            "No exam record at all for: " + ", ".join(unmatched_codes) + ". "
+            "This code doesn't appear in data/exams.csv — check for a typo or "
+            "formatting mismatch (strict matching, no auto-correction) rather "
+            "than assuming there's simply no final exam."
+        )
+
     if not has_exam.empty:
         st.dataframe(
             has_exam[["code", "name", "date", "start", "end", "remarks"]],

@@ -58,6 +58,7 @@ def load_sessions():
     df["start"] = df["start"].apply(normalize_time)
     df["end"] = df["end"].apply(normalize_time)
     df["weeks"] = df["weeks"].apply(normalize_weeks)
+    df["section"] = df["section"].fillna("") if "section" in df.columns else ""
     return df
 
 
@@ -348,17 +349,28 @@ def main():
             hide_index=True,
         )
 
-    # One catalog entry per module `code`, no matter what each individual
-    # session row's `name` text says. Deduplicating on the (code, name) pair
-    # instead would silently split a module into multiple, inconsistent
-    # dropdown entries if any one row's name text differs even slightly
-    # (e.g. one row says "(CS01)" and another doesn't) — code is the only
-    # strict, reliable identity for a module.
+    # One catalog entry per (code, section): a module with no alternative
+    # sections gets a single entry (name as-is). A module that splits into
+    # parallel groups (non-blank `section`, e.g. CS01/CS02) gets one entry
+    # per group, using that row's own `name` text — which is expected to
+    # spell out the section (e.g. "... (CS01) ..."), so picking it is
+    # self-explanatory with no separate "which section?" step needed. The
+    # module's blank-section (mandatory/shared) rows, if any, are pulled in
+    # automatically once a section is picked, so they must NOT also get
+    # their own catalog entry — that would let someone pick "just the
+    # lecture" with no seminar section at all.
+    catalog_rows = []
+    for code, group in sessions.groupby("code", sort=False):
+        alt = group[group["section"] != ""]
+        if alt.empty:
+            catalog_rows.append({"code": code, "section": "", "name": group["name"].iloc[0]})
+        else:
+            for sec in dict.fromkeys(alt["section"]):
+                sec_name = alt[alt["section"] == sec]["name"].iloc[0]
+                catalog_rows.append({"code": code, "section": sec, "name": sec_name})
     catalog = (
-        sessions.groupby("code", sort=False)["name"]
-        .first()
-        .reset_index()
-        .sort_values("code")
+        pd.DataFrame(catalog_rows)
+        .sort_values(["code", "section"])
         .assign(label=lambda d: d["code"] + " — " + d["name"])
     )
 
@@ -366,17 +378,40 @@ def main():
     selected_labels = st.multiselect(
         "Modules",
         options=catalog["label"].tolist(),
-        help="Includes ESD core/elective modules and HASS/TE elective options.",
+        help=(
+            "Includes ESD core/elective modules and HASS/TE elective options. "
+            "Where a module has parallel sections (e.g. CS01/CS02), each section "
+            "is listed separately — pick the one you're in."
+        ),
     )
-    selected_codes = catalog[catalog["label"].isin(selected_labels)]["code"].tolist()
+    selected = catalog[catalog["label"].isin(selected_labels)]
+    selected_codes = selected["code"].unique().tolist()
 
     if not selected_codes:
         st.info("Select at least one module above to build your timetable.")
         return
 
+    dupe_codes = selected["code"][selected["code"].duplicated()].unique().tolist()
+    if dupe_codes:
+        st.warning(
+            "You've selected more than one section of the same module: "
+            + ", ".join(dupe_codes)
+            + ". You can normally only attend one — check this is intentional."
+        )
+
     color_map = {code: COLORS[i % len(COLORS)] for i, code in enumerate(selected_codes)}
 
-    sel_sessions = sessions[sessions["code"].isin(selected_codes)].copy()
+    # For each selected (code, section), pull that section's rows plus any
+    # always-mandatory rows for that code (blank `section`, e.g. a shared
+    # lecture) that aren't already covered by selecting a specific section.
+    resolved_parts = []
+    for code, section in zip(selected["code"], selected["section"]):
+        code_df = sessions[sessions["code"] == code]
+        if section == "":
+            resolved_parts.append(code_df[code_df["section"] == ""])
+        else:
+            resolved_parts.append(code_df[code_df["section"].isin(["", section])])
+    sel_sessions = pd.concat(resolved_parts, ignore_index=True).drop_duplicates() if resolved_parts else sessions.iloc[0:0].copy()
 
     st.subheader("2. Review / correct session details")
     st.caption(

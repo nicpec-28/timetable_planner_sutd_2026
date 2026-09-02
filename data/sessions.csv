@@ -1,8 +1,8 @@
 code,name,session_type,day,start,end,weeks,faculty,venue,confidence,section
 01.107,Urban Transportation,Seminar (CBL),Tue,11:30,13:30,"1-6,8-13",Cai Yutong,"Think Tank 2/3, 1.309/1.310",high,
 01.107,Urban Transportation,Seminar (CBL),Thu,11:30,13:30,"1-6,8-13",Cai Yutong,"Think Tank 2/3, 1.309/1.310",high,
-01.400,Capstone,Studio (CBL),Wed,10:30,13:30,"1-6,8-13",-,"Capstone 1, 1.411",high,
-01.400,Capstone,Studio (CBL),Fri,08:30,11:30,"1-6,8-13",-,"Capstone 1, 1.411",high,
+01.400,Capstone,Studio (CBL),Wed,10:30,13:30,"1-6,8-13",-,"Various",high,
+01.400,Capstone,Studio (CBL),Fri,08:30,11:30,"1-6,8-13",-,"Various",high,
 40.242,Derivative Pricing and Risk Management,Seminar (CBL),Tue,11:30,13:30,"1-6,8-13",Douglas Streeter Rolph,"Think Tank 20, 2.305",high,
 40.242,Derivative Pricing and Risk Management,Seminar (CBL),Thu,11:30,13:30,"1-6,8-13",Douglas Streeter Rolph,"Think Tank 20, 2.305",high,
 40.302,Advanced Topics in Optimisation (weeks 1-6),Lecture,Tue,09:00,11:00,"1-6",Antonios Varvitsiotis,"Lecture Theatre 2, 1.203/1.318",high,
@@ -19,8 +19,9 @@ code,name,session_type,day,start,end,weeks,faculty,venue,confidence,section
 40.323,Equity Valuation,Seminar (CBL),Thu,15:30,17:30,"1-6,8-13",Douglas Streeter Rolph,"Think Tank 20, 2.305",medium,
 01.101,Technologies for Sustainable Global Health,Seminar (CBL),Tue,11:30,13:30,"1-6,8-13",Julia Zhu Yajuan,"Think Tank 2/3, 1.309/1.310",high,
 01.101,Technologies for Sustainable Global Health,Seminar (CBL),Thu,16:00,19:00,"1-6,8-13",Julia Zhu Yajuan,"Think Tank 2/3, 1.309/1.310",low,
-02.143HT,Artificial Intelligence and Ethics,Lecture,Tue,16:00,17:00,"1-6,8-13",Grace Boey (Koek Hui Xia Christina),"Lecture Theatre 4, 2.404",low,
-02.143HT,Artificial Intelligence and Ethics (CH01),Seminar (CBL),Tue,18:00,20:00,"1-6,8-13",Grace Boey (Koek Hui Xia Christina),"Think Tank 1, 1.308",low,CH01
+02.143HT,Artificial Intelligence and Ethics,Lecture,Tue,16:00,17:00,"1-6,8-13",Grace Boey; Koek Hui Xia Christina,"Lecture Theatre 4, 2.404",low,
+02.143HT,Artificial Intelligence and Ethics (CH01),Seminar (CBL),Tue,18:00,20:00,"1-6,8-13",Grace Boey; Koek Hui Xia Christina,"Think Tank 1, 1.308",low,CH01
+02.143HT,Artificial Intelligence and Ethics (CH02),Seminar (CBL),Thu,09:00,11:00,"1-6,8-13",Grace Boey; Koek Hui Xia Christina,"Think Tank 1, 1.308",medium,CH02
 02.143HT,Artificial Intelligence and Ethics (CH03),Seminar (CBL),Fri,11:30,13:30,"1-6,8-13",Grace Boey (Koek Hui Xia Christina),"Think Tank 1, 1.308",medium,CH03
 02.146,Financing Cities of the Future: Theory and Practice,Seminar (CBL),Thu,08:30,11:30,"1-6,8-13",Jin Murakami,"Think Tank 6, 1.408",medium,
 02.152TS,Urban Theory,Seminar (CBL),Mon,15:00,18:00,"1-6,8,10-13",Jeffrey Chan (Chan Kok Hui),"Cohort Classroom 14, 2.507A/2.507B",medium,
@@ -30,8 +31,9 @@ code,name,session_type,day,start,end,weeks,faculty,venue,confidence,section
 02.183HT,Philosophy of Artificial Intelligence,Lecture,Mon,15:00,16:00,"1-6,8,10-13",Nathaniel Gan,Lecture Theatre 4,low,
 02.183HT,Philosophy of Artificial Intelligence (CH01),Seminar (CBL),Mon,16:00,18:00,"1-6,8,10-13",Nathaniel Gan,"Cohort Classroom 10, 2.308A/2.308B",low,CH01
 02.183HT,Philosophy of Artificial Intelligence (CH02),Seminar (CBL),Tue,18:00,20:00,"1-6,8-13",Nathaniel Gan,"Cohort Classroom 10, 2.308A/2.308B",low,CH02
-02.183HT,Philosophy of Artificial Intelligence (CH03),Seminar (CBL),Thu,08:30,11:30,"1-6,8-13",Nathaniel Gan,"Cohort Classroom 10, 2.308A/2.308B",medium,CH03
+02.183HT,Philosophy of Artificial Intelligence (CH03),Seminar (CBL),Thu,09:00,11:00,"1-6,8-13",Nathaniel Gan,"Cohort Classroom 10, 2.308A/2.308B",medium,CH03
 02.208,Microeconomics (CH01),Seminar (CBL),Mon,15:00,18:00,"1-6,8,10-13",Su Mengyang,"Cohort Classroom 16, 2.607A/2.607B",medium,CH01
 02.208,Microeconomics (CH02),Seminar (CBL),Thu,08:30,11:30,"1-6,8-13",Su Mengyang,"Cohort Classroom 16, 2.607A/2.607B",medium,CH02
 02.230TS,Health Communication and Behavior Change,Lecture,Mon,15:00,16:00,"1-6,8,10-13",Evelyn Chew (Chew Ai Ling),Lecture Theatre 5,low,
-02.230TS,Health Communication and Behavior Change,Seminar (CBL),Mon,16:00,18:00,"1-6,8,10-13",Evelyn Chew (Chew Ai Ling),"Cohort Classroom 12, 2.406A/2.406B",low,
+02.230TS,Health Communication and Behavior Change (CH01),Seminar (CBL),Mon,16:00,18:00,"1-6,8,10-13",Evelyn Chew (Chew Ai Ling),"Cohort Classroom 12, 2.406A/2.406B",low,CH01
+02.230TS,Health Communication and Behavior Change (CH02),Seminar (CBL),Thu,09:30,11:30,"1-6,8-13",Evelyn Chew (Chew Ai Ling),"Cohort Classroom 12, 2.406A/2.406B",low,CH02

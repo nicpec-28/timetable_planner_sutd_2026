@@ -184,8 +184,8 @@ def build_calendar_html(edited_df, color_map):
     px_per_hour = 60
     all_starts = [parse_hhmm(s) for s in edited_df["start"]]
     all_ends = [parse_hhmm(s) for s in edited_df["end"]]
-    min_hour = min([8] + [t.hour for t in all_starts])
-    max_hour = max([18] + [t.hour + (1 if t.minute else 0) for t in all_ends])
+    min_hour = min([7] + [t.hour for t in all_starts])
+    max_hour = max([22] + [t.hour + (1 if t.minute else 0) for t in all_ends])
     total_height = (max_hour - min_hour) * px_per_hour
 
     day_cols_html = []
